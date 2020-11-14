@@ -1,13 +1,11 @@
-package Model;
+package Bai_tap_lon;
 
 import java.util.Set;
-import java.util.ArrayList;
 
 public class TagManager {
-    
-    private Set<Tag> tagSet;
 	
-	ArrayList<Tag> tagList = new ArrayList<Tag>();
+	private Set<Tag> tagSet;
+
 	
 	public TagManager() {
 		
@@ -24,23 +22,28 @@ public class TagManager {
 		this.tagSet = tagSet;
 	}
 	
-//Thêm tag vào tagList 
-	public void addTag(Tag Tag) {
-	tagList.add((Tag) tagSet);
+
+	public void addTag(Tag tag) {
+		tagSet.add(tag);
 	}
 	
-//Xoá tag khỏi tagList 
-	public void removeTag(Tag Tag) {
-	tagList.remove((Tag) tagSet);
-	}
-//Tìm Kiếm xem có tag trong tagList không, nếu có trả về true và hiện ra tag 
-	public Tag findTag(Tag String) {
-	tagList.contains((Tag) tagSet);
-	return (Tag) tagSet;
-	}
-//Ktra xem có tag đó trong tagList hay không 
-	public boolean isHaveThisTag(Tag String) {
-	return tagList.contains((Tag) tagSet);
-	}
 
+	public void removeTag(Tag tag) {
+		tagSet.remove(tag);
+	}
+	
+	public Tag findTag(String tag ) {
+		if(getTagSet().equals(tag) == true) {
+			Tag t = new Tag();
+			t.setTagName(tag);
+			return t;
+		}
+		else {
+			return null;
+		}
+	}
+	
+	public boolean isHaveThisTag(String tag) {
+		return tagSet.equals(tag);
+	}
 }
